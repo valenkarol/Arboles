@@ -1,14 +1,14 @@
 package co.edu.uniquindio.poo;
 
-public class NodoArbol <T > {
+public class NodoArbol<T> {
     private T elemento;
-    private NodoArbol<T> derecha;
     private NodoArbol<T> izquierda;
+    private NodoArbol<T> derecha;
 
     public NodoArbol(T elemento) {
         this.elemento = elemento;
-        derecha = null;
-        izquierda = null;
+        this.izquierda = null;
+        this.derecha = null;
     }
 
     public T getElemento() {
@@ -19,20 +19,19 @@ public class NodoArbol <T > {
         this.elemento = elemento;
     }
 
+    public NodoArbol<T> getIzquierda() {
+        return izquierda;
+    }
+
+    public void setIzquierda(NodoArbol<T> izquierda) {
+        this.izquierda = izquierda;
+    }
+
     public NodoArbol<T> getDerecha() {
         return derecha;
     }
 
-    public void setProximo(NodoArbol<T> proximo) {
-        this.derecha = proximo;
-    }
-
-    public NodoArbol<T> getAnterior() {
-        return izquierda;
-    }
-
-    public void setAnterior(NodoArbol<T> anterior) {
-        this.izquierda = anterior;
+    public void setDerecha(NodoArbol<T> derecha) {
+        this.derecha = derecha;
     }
 }
-
