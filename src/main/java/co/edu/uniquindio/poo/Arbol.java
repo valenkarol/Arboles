@@ -30,7 +30,6 @@ public class Arbol<T extends Comparable<T>> {
         } else if (comparacion > 0) {
             actual.setDerecha(insertarRecursivo(actual.getDerecha(), elemento));
         }
-        // Si es igual, no se inserta (no duplicados)
         return actual;
     }
 

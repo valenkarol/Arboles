@@ -1,17 +1,35 @@
 package co.edu.uniquindio.poo;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Arbol<Integer> arbol = new Arbol<>();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        arbol.insertar(50);
+        arbol.insertar(30);
+        arbol.insertar(70);
+        arbol.insertar(20);
+        arbol.insertar(40);
+        arbol.insertar(60);
+        arbol.insertar(80);
+
+        System.out.println("Inorden:");
+        arbol.recorrerInorden();
+
+        System.out.println("Preorden:");
+        arbol.recorrerPreorden();
+
+        System.out.println("Postorden:");
+        arbol.recorrerPostorden();
+
+        System.out.println("Por amplitud:");
+        arbol.recorrerPorAmplitud();
+
+        System.out.println("Altura: " + arbol.obtenerAltura());
+        System.out.println("Peso: " + arbol.obtenerPeso());
+        System.out.println("Buscar 40: " + arbol.buscar(40));
+
+        arbol.eliminar(70);
+        System.out.println("Después de eliminar 70:");
+        arbol.recorrerInorden();
     }
 }
